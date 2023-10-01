@@ -1,0 +1,14 @@
+1/ Packages cần thiết
+morgan: log request
+ có 5 chế độ: dev, complie, common, short, tiny
+helmet: bảo vệ thông tin riêng tư, chặn đọc cookie
+compression: giúp làm giảm băng thông tải
+
+2/ connect MongoDB
+PoolSize: tạo 1 nhóm các connect DB, chờ sẵn các connect mới để chuyển vào DB xử lý
+- Nếu quá PoolSize thì các connect vượt quá sẽ vào hàng đợi để chờ nhóm trước xử lý xong mới xử lý tiếp
+- Nhờ có PoolSize nên không cần thiết phải disConnect mỗi lần kết thúc phiên connect.
+
+3/ Tạo file .env
+file config: lưu trữ thông tin cài đặt liên quan tới code
+file env: lưu trữ thông tin liên quan tới môi trường có thể thay đổi và nhạy cảm
