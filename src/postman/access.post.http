@@ -2,6 +2,7 @@
 ### signup
 POST http://localhost:3055/v1/api/shop/signup
 Content-Type: application/json
+x-api-key: a5bcaed3edb98177cb090e3048901642640550015958a9e320581b029160cc360dbe39086436d04b898015974705e0bc387fc50c2b5a3ba086f0e9f17ec32452
 
 {
     "name": "Shop1",

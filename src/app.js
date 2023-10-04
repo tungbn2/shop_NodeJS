@@ -34,5 +34,19 @@ app.get("/home", (req, res, next) => {
 app.use("/", require("./routes"));
 
 // handle errors
+app.use((res, req, next) => {
+  const error = new Error("Not Found");
+  error.status = 404;
+  next(error);
+});
+
+app.use((error, req, res, next) => {
+  const status = error.status || 500;
+  return res.status(status).json({
+    status: "error",
+    code: status,
+    message: error.message,
+  });
+});
 
 module.exports = app;
